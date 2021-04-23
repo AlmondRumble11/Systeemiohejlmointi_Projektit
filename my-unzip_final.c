@@ -1,3 +1,9 @@
+/*
+Name: Jesse Mustonen
+Studentnumber: 0541805
+Project: my-unzip
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
