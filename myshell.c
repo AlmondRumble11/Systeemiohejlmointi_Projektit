@@ -267,10 +267,11 @@ int check_build_in(char **arguments,int *only_build_ins,struct paths **path, str
 char **get_arguments(char *command){
 	int buffer_size; //buffer size
 	buffer_size = strlen(command); //buffer size is the line lenght
+	char spaces[]=" \t\r\n\v\f"; //for all whitepace characters
 	int wp_command_count = 0; //how many commands
 	char *arg = command; //temp for the command
 	char **white_space_commands = malloc(buffer_size*sizeof(char*)); //allocate momory for the parsed commands
-	char *white_space = strtok(arg," "); //get the first command
+	char *white_space = strtok(arg,spaces); //get the first command
 	white_space_commands[wp_command_count] = white_space; //add it to all of the commands
 	
 	//checks if only whitespaces and frees the allocated memeory for the commands
@@ -283,7 +284,7 @@ char **get_arguments(char *command){
 	//go through the next commnds
 	while(white_space != NULL){
 		//take next command and add it to lsit of commands
-		white_space = strtok(NULL," ");
+		white_space = strtok(NULL,spaces);
 		wp_command_count++;
 		white_space_commands[wp_command_count]=white_space;
 	}
