@@ -39,7 +39,7 @@ void unzipping(char *filename){
             }
     }
 
-    //closing ht efile and freeing the buffer
+    //closing the file
     fclose(file);
   
 }
